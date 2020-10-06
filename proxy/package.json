@@ -2,7 +2,7 @@
   "name": "reviews",
   "version": "1.0.0",
   "description": "Single Page application on a Service Oriented Architecture",
-  "main": "proxy/index.js",
+  "main": "proxy/server/index.js",
   "dependencies": {
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
@@ -10,10 +10,11 @@
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "start": "nodemon proxy/index.js"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jamie-Lee-Birdis/reviews-proxy.git"
