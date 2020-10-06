@@ -1,0 +1,20 @@
+{
+  "name": "fec-proxy",
+  "version": "1.0.0",
+  "description": "A proxy server that takes 3 services and aggregates them into one single page application.",
+  "main": "proxy/index.js",
+  "scripts": {
+    "start": "cd proxy && npm start",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamie-Lee-Birdis/reviews-proxy.git"
+  },
+  "author": "John Tirelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jamie-Lee-Birdis/reviews-proxy/issues"
+  },
+  "homepage": "https://github.com/Jamie-Lee-Birdis/reviews-proxy#readme"
+}
