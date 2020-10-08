@@ -5,22 +5,25 @@
   "main": "proxy/server/index.js",
   "dependencies": {
     "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.5",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
   },
   "scripts": {
-    "start": "nodemon server/index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jamie-Lee-Birdis/reviews-proxy.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "John Tirelli",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jamie-Lee-Birdis/reviews-proxy/issues"
