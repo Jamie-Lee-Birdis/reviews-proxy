@@ -16,7 +16,8 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",

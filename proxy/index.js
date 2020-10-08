@@ -8,14 +8,16 @@ const port = 3000;
 const app = express();
 app.use(bodyParser.json())
 
-  app.use('/', express.static('public'));
+  app.use(express.static('public'));
+  app.use('/game/:id/', (req, res, next) => {
+    var id = req.params.id;
+    app.locals.gameID = id;
+    next();
+  }, express.static('public'));
 
+  // //////////////Hero Section////////////////// //
   app.use('/api/hero/all_info/', (req, res) => {
-    var id = req.params.gameID;
-    if (!id) {
-      id = 2;
-    }
-    axios.get(`http://127.0.0.1:3001/api/hero/all_info/${id}`)
+    axios.get(`http://127.0.0.1:3001/api/hero/all_info/${app.locals.gameID}`)
     .then(function (response) {
       res.send(response.data);
     })
@@ -25,16 +27,11 @@ app.use(bodyParser.json())
     });
   })
 
-  app.use('/moist-air/game', (req, res) => {
-    var id = req.params.gameID;
-    if (!id) {
-      id = 0;
-    } else {
-      id = id - 1;
-    }
-    axios.get(`http://127.0.0.1:3002/moist-air/game?id=${id}`)
+  // //////////////Body Section////////////////// //
+  app.get('/moist-air/game', (req, res) => {
+    axios.get(`http://127.0.0.1:3002/moist-air/game?id=${app.locals.gameID}`)
     .then(function (response) {
-      res.send(response.data);
+      res.send([ response.data[app.locals.gameID - 1] ]);
     })
     .catch(function (error) {
       console.log(error);
@@ -42,13 +39,9 @@ app.use(bodyParser.json())
     });
   })
 
-
+  // //////////////Review Section////////////////// //
   app.get('/moist-air/reviews', (req, res) => {
-    var id = req.params.gameID;
-    if (!id) {
-      id = 1;
-    }
-    axios.get(`http://127.0.0.1:3003/moist-air/reviews?gameID=${id}`)
+    axios.get(`http://127.0.0.1:3003/moist-air/reviews?gameID=${app.locals.gameID}`)
     .then(function (response) {
       res.send(response.data);
     })
