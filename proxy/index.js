@@ -51,6 +51,22 @@ app.use(bodyParser.json())
     });
   })
 
+  app.patch('/moist-air/reviews', (req, res) => {
+    // debugger;
+    let reviewID = req.query.reviewID;
+    let key = req.query.key;
+    let value = req.query.value;
+    let query = `reviewID=${reviewID}&key=${key}&value=${value}`
+    axios.patch(`http://127.0.0.1:3003/moist-air/reviews?${query}`)
+    .then(function (response) {
+      res.send(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.send(error);
+    });
+  })
+
 app.listen(port, () => {
   console.log(`Moist Air app listening at http://localhost:${port}`)
 })

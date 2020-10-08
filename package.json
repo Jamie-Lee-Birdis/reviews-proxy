@@ -4,6 +4,7 @@
   "description": "A proxy server that takes 3 services and aggregates them into one single page application.",
   "main": "proxy/index.js",
   "scripts": {
+    "build": "cd proxy && npm run build",
     "start": "cd proxy && npm start"
   },
   "repository": {
