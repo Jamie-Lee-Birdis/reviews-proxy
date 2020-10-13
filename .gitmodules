@@ -1,9 +1,0 @@
-[submodule "head"]
-	path = head
-	url = https://github.com/Jamie-Lee-Birdis/hero-section.git
-[submodule "body"]
-	path = body
-	url = /body
-[submodule "reviews"]
-	path = reviews
-	url = https://github.com/Jamie-Lee-Birdis/reviews.git
