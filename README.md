@@ -1,7 +1,7 @@
-# Project Name
+# Single Page Application (Docker)
+
 
 > This project is an excercise in designing a single page application sales portal. This page will make use of interactive components to display video, images, and text content to a potential customer, making use of a service oriented architecture through a proxy server to create one seamless page.
-
 
 ## Related Projects
 
@@ -19,32 +19,17 @@
 ## Usage
 > After installation, use npm start to run the server.
 
-
-## Scripts
-From within the root folder:
-<!-- - npm run installAll - Install all dependencies in their local folders.
-- npm run initialize - Create Database and tables and seed with fake data.
-- npm run clearDB - Remove all data and delete database.
-- npm run build - run webpack to create a bundle.js file. -->
-
-
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- axios
-- dotenv
-- nodemon
-- react
-- react-dom
-- styled-components
-- ...
+- [Docker](https://docs.docker.com/engine/install/)
+- [Docker-compose](https://docs.docker.com/compose/install/)
 
 ### Installation
 
 From within the root directory:
 
-```sh
-  TBA
-```
+
+1. Clone this respository.
+1. Install [Docker](https://docs.docker.com/engine/install/) and [Docker-compose](https://docs.docker.com/compose/install/)
+1. From the shell, Create the container and run it: ```docker-compose up```
+1. From a seperate shell, seed the database: ```docker exec -it reviews_app npm run initialize```
