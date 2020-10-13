@@ -16,20 +16,12 @@ services:
       - "reviewDb:database"
     ports:
       - "3003:3003"
-  headDb:
-    container_name: head_database
-    image: mysql
-    environment:
-    - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
-    - MYSQL_USER=${DB_USERNAME}
-    - MYSQL_PASSWORD=${DB_PASSWORD}
-    - MYSQL_DATABASE=${DB_NAME_DEV}
   head:
     container_name: head_component
     # build: ../head
     image: jtirelli/hero_component:latest
     links:
-      - "headDb:head_database"
+      - "reviewDb:head_database"
     ports:
       - "3001:3001"
   proxy:

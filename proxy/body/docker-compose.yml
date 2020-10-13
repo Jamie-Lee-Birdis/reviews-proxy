@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo_db
+    ports:
+    - "27017-27019:27017-27019"
+  body:
+    # build: .
+    image: jtirelli/body:latest
+    restart: always
+    links:
+      - "mongo:mongo_db"
+    depends_on:
+      - mongo
+    ports:
+      - 3002:3002
